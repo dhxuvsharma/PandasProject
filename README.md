@@ -15,6 +15,10 @@ presents the analysis in four tabs:
 4. **Interactive Prediction**: pick a model, set a few listing features (the rest stay at their averages) and get a
    predicted nightly price.
 
+The sidebar filters (room type, price, bedrooms, neighborhood, Superhost, pool) drive every descriptive chart,
+including an interactive price map and a neighborhood explorer. The prediction tab adds "what if" charts that vary
+one feature (bedrooms, guests, bathrooms or neighborhood) and compare all seven models.
+
 ## Repository contents
 
 | Path | What it is |

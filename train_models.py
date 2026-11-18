@@ -261,7 +261,7 @@ def main(data_path, fast=False):
     defaults["neighbourhood_cleansed"] = price_data["neighbourhood_cleansed"].mode()[0]
 
     pd.DataFrame(preds).to_csv(ROOT / "artifacts" / "test_predictions.csv", index=False)
-    keep = ["price", "log_price", "room_type", "neighbourhood_cleansed", "review_scores_rating",
+    keep = ["name", "latitude", "longitude", "price", "log_price", "room_type", "neighbourhood_cleansed", "review_scores_rating",
             "amenity_count"] + PROPERTY + HOST + AMENITIES
     price_data[keep].to_csv(ROOT / "data" / "price_data.csv.gz", index=False, compression="gzip")
 
