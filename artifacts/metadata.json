@@ -1,0 +1,368 @@
+{
+  "county": {
+    "n_listings": 43781,
+    "n_columns": 90,
+    "geo_counts": {
+      "City of Los Angeles": 21687,
+      "Other Cities": 18007,
+      "Unincorporated Areas": 4087
+    },
+    "room_counts": {
+      "Entire home/apt": 32303,
+      "Private room": 10755,
+      "Hotel room": 412,
+      "Shared room": 311
+    },
+    "price_missing_pct": 16.203375893652495,
+    "rating_missing_pct": 24.771019391973688,
+    "n_city": 21687,
+    "n_price_sample": 17678,
+    "n_ratings_sample": 12133
+  },
+  "test_metrics": {
+    "OLS 1: Property": {
+      "R2 (log price)": 0.6664689507983813,
+      "RMSE (log price)": 0.5689656404941077,
+      "MAE ($)": 166.5341706376165,
+      "Median abs. error ($)": 59.185595100627694,
+      "Median abs. % error": 38.03793624525959,
+      "Features": 4
+    },
+    "OLS 2: + Amenities": {
+      "R2 (log price)": 0.695049071564153,
+      "RMSE (log price)": 0.5440425725372453,
+      "MAE ($)": 161.80091298265594,
+      "Median abs. error ($)": 59.10530182109349,
+      "Median abs. % error": 36.51071955702723,
+      "Features": 10
+    },
+    "OLS 3: + Host": {
+      "R2 (log price)": 0.6996540783415722,
+      "RMSE (log price)": 0.539919204343023,
+      "MAE ($)": 160.9654754874781,
+      "Median abs. error ($)": 57.90799150377026,
+      "Median abs. % error": 35.238456441745555,
+      "Features": 12
+    },
+    "OLS 4: + Neighborhood": {
+      "R2 (log price)": 0.7620771012259653,
+      "RMSE (log price)": 0.4805471731482544,
+      "MAE ($)": 146.36270268326652,
+      "Median abs. error ($)": 54.19141489805057,
+      "Median abs. % error": 30.718755596256536,
+      "Features": 13
+    },
+    "Ridge": {
+      "R2 (log price)": 0.7621961682729421,
+      "RMSE (log price)": 0.4804269146665324,
+      "MAE ($)": 146.3876016367881,
+      "Median abs. error ($)": 54.189949997884796,
+      "Median abs. % error": 30.91756083042716,
+      "Features": 13
+    },
+    "Random Forest": {
+      "R2 (log price)": 0.8020571673150421,
+      "RMSE (log price)": 0.4383164762965914,
+      "MAE ($)": 127.51184625675313,
+      "Median abs. error ($)": 49.226860964464464,
+      "Median abs. % error": 27.318102976727022,
+      "Features": 13
+    },
+    "Gradient Boosting": {
+      "R2 (log price)": 0.8085001091986147,
+      "RMSE (log price)": 0.43112397109097056,
+      "MAE ($)": 127.33980595981693,
+      "Median abs. error ($)": 47.05115205846141,
+      "Median abs. % error": 25.87893473503299,
+      "Features": 13
+    }
+  },
+  "best_params": {
+    "OLS 1: Property": {
+      "(none)": "Ordinary least squares has no tuning parameters"
+    },
+    "OLS 2: + Amenities": {
+      "(none)": "Ordinary least squares has no tuning parameters"
+    },
+    "OLS 3: + Host": {
+      "(none)": "Ordinary least squares has no tuning parameters"
+    },
+    "OLS 4: + Neighborhood": {
+      "(none)": "Ordinary least squares has no tuning parameters"
+    },
+    "Ridge": {
+      "alpha": 3,
+      "CV RMSE (log)": 0.493
+    },
+    "Random Forest": {
+      "n_estimators": 250,
+      "min_samples_leaf": 2,
+      "max_features": 0.3,
+      "max_depth": 18,
+      "CV RMSE (log)": 0.4528
+    },
+    "Gradient Boosting": {
+      "min_samples_leaf": 10,
+      "max_leaf_nodes": 63,
+      "max_iter": 900,
+      "learning_rate": 0.03,
+      "l2_regularization": 0.0,
+      "CV RMSE (log)": 0.4437
+    }
+  },
+  "insample_ols": {
+    "OLS 1: Property": {
+      "R2": 0.654851709234567,
+      "Adj R2": 0.6547345178054124,
+      "n": 17678
+    },
+    "OLS 2: + Amenities": {
+      "R2": 0.6857416853696072,
+      "Adj R2": 0.6855282067522528,
+      "n": 17678
+    },
+    "OLS 3: + Host": {
+      "R2": 0.6900843333764686,
+      "Adj R2": 0.689838688846506,
+      "n": 17678
+    },
+    "OLS 4: + Neighborhood": {
+      "R2": 0.7572587831488854,
+      "Adj R2": 0.7555161249913308,
+      "n": 17678
+    }
+  },
+  "full_ols_coefficients": [
+    {
+      "term": "wifi",
+      "coef": -0.008213518449964038,
+      "lo": -0.10342897683663387,
+      "hi": 0.08700193993670578,
+      "p": 0.8657405673063134
+    },
+    {
+      "term": "parking",
+      "coef": 0.011182086687692029,
+      "lo": -0.013262303879368983,
+      "hi": 0.03562647725475304,
+      "p": 0.36994011546652406
+    },
+    {
+      "term": "pool_spa",
+      "coef": 0.24971265121707567,
+      "lo": 0.23004351417876334,
+      "hi": 0.269381788255388,
+      "p": 1.1357571414828962e-136
+    },
+    {
+      "term": "air_conditioning",
+      "coef": 0.16104676885927943,
+      "lo": 0.13968898665020263,
+      "hi": 0.18240455106835624,
+      "p": 2.0022608912200918e-49
+    },
+    {
+      "term": "kitchen",
+      "coef": -0.1945180680925951,
+      "lo": -0.22781979281609072,
+      "hi": -0.16121634336909946,
+      "p": 2.3977954759138413e-30
+    },
+    {
+      "term": "washer_dryer",
+      "coef": -0.09903869807962609,
+      "lo": -0.12314818293423474,
+      "hi": -0.07492921322501744,
+      "p": 8.1930694989683795e-16
+    },
+    {
+      "term": "superhost",
+      "coef": 0.08628529606685575,
+      "lo": 0.07036745156294649,
+      "hi": 0.10220314057076502,
+      "p": 2.2971100828210443e-26
+    },
+    {
+      "term": "availability_365",
+      "coef": -0.00012415299295778936,
+      "lo": -0.00019798659480730333,
+      "hi": -5.031939110827537e-05,
+      "p": 0.0009816736100985426
+    },
+    {
+      "term": "bedrooms",
+      "coef": 0.14807125309036795,
+      "lo": 0.11889288280132722,
+      "hi": 0.17724962337940867,
+      "p": 2.619594808279791e-23
+    },
+    {
+      "term": "bathrooms_num",
+      "coef": 0.06718272476468021,
+      "lo": 0.052026223913783205,
+      "hi": 0.08233922561557722,
+      "p": 3.6972457326821314e-18
+    },
+    {
+      "term": "accommodates",
+      "coef": 0.09960612643732968,
+      "lo": 0.08922151359388387,
+      "hi": 0.10999073928077548,
+      "p": 7.638517853345542e-79
+    }
+  ],
+  "rating_model": {
+    "r2": 0.0943348635799045,
+    "n": 12133,
+    "log_price_coef": 0.08721617832742778,
+    "superhost_coef": 0.13743342749061507,
+    "spearman": 0.08520874387740122
+  },
+  "defaults": {
+    "bedrooms": 1.8152505939585926,
+    "bathrooms_num": 1.753818305238149,
+    "accommodates": 4.163197194252744,
+    "superhost": 0.3698382169928725,
+    "availability_365": 265.45310555492705,
+    "wifi": 0.9882905306030094,
+    "parking": 0.8768525851340649,
+    "pool_spa": 0.2936418146849191,
+    "air_conditioning": 0.8394614775427085,
+    "kitchen": 0.90264735829845,
+    "washer_dryer": 0.8262246860504582,
+    "room_type": "Entire home/apt",
+    "neighbourhood_cleansed": "Hollywood"
+  },
+  "room_types": [
+    "Entire home/apt",
+    "Hotel room",
+    "Private room",
+    "Shared room"
+  ],
+  "neighbourhoods": [
+    "Adams-Normandie",
+    "Arleta",
+    "Arlington Heights",
+    "Atwater Village",
+    "Baldwin Hills/Crenshaw",
+    "Bel-Air",
+    "Beverly Crest",
+    "Beverly Grove",
+    "Beverlywood",
+    "Boyle Heights",
+    "Brentwood",
+    "Broadway-Manchester",
+    "Canoga Park",
+    "Carthay",
+    "Central-Alameda",
+    "Century City",
+    "Chatsworth",
+    "Chatsworth Reservoir",
+    "Chesterfield Square",
+    "Cheviot Hills",
+    "Chinatown",
+    "Cypress Park",
+    "Del Rey",
+    "Downtown",
+    "Eagle Rock",
+    "East Hollywood",
+    "Echo Park",
+    "El Sereno",
+    "Elysian Park",
+    "Elysian Valley",
+    "Encino",
+    "Exposition Park",
+    "Fairfax",
+    "Florence",
+    "Glassell Park",
+    "Gramercy Park",
+    "Granada Hills",
+    "Green Meadows",
+    "Griffith Park",
+    "Hancock Park",
+    "Harbor City",
+    "Harbor Gateway",
+    "Harvard Heights",
+    "Harvard Park",
+    "Highland Park",
+    "Historic South-Central",
+    "Hollywood",
+    "Hollywood Hills",
+    "Hollywood Hills West",
+    "Hyde Park",
+    "Jefferson Park",
+    "Koreatown",
+    "Lake Balboa",
+    "Lake View Terrace",
+    "Larchmont",
+    "Leimert Park",
+    "Lincoln Heights",
+    "Los Feliz",
+    "Manchester Square",
+    "Mar Vista",
+    "Mid-City",
+    "Mid-Wilshire",
+    "Mission Hills",
+    "Montecito Heights",
+    "Mount Washington",
+    "North Hills",
+    "North Hollywood",
+    "Northridge",
+    "Pacific Palisades",
+    "Pacoima",
+    "Palms",
+    "Panorama City",
+    "Pico-Robertson",
+    "Pico-Union",
+    "Playa Vista",
+    "Playa del Rey",
+    "Porter Ranch",
+    "Rancho Park",
+    "Reseda",
+    "San Pedro",
+    "Sawtelle",
+    "Sepulveda Basin",
+    "Shadow Hills",
+    "Sherman Oaks",
+    "Silver Lake",
+    "South Park",
+    "Studio City",
+    "Sun Valley",
+    "Sunland",
+    "Sylmar",
+    "Tarzana",
+    "Toluca Lake",
+    "Tujunga",
+    "University Park",
+    "Valley Glen",
+    "Valley Village",
+    "Van Nuys",
+    "Venice",
+    "Vermont Knolls",
+    "Vermont Square",
+    "Vermont Vista",
+    "Vermont-Slauson",
+    "Watts",
+    "West Adams",
+    "West Hills",
+    "West Los Angeles",
+    "Westchester",
+    "Westlake",
+    "Westwood",
+    "Wilmington",
+    "Windsor Square",
+    "Winnetka",
+    "Woodland Hills"
+  ],
+  "n_train": 14142,
+  "n_test": 3536,
+  "model_files": {
+    "OLS 1: Property": "ols_1_property.joblib",
+    "OLS 2: + Amenities": "ols_2_amenities.joblib",
+    "OLS 3: + Host": "ols_3_host.joblib",
+    "OLS 4: + Neighborhood": "ols_4_neighborhood.joblib",
+    "Ridge": "ridge.joblib",
+    "Random Forest": "random_forest.joblib",
+    "Gradient Boosting": "gradient_boosting.joblib"
+  }
+}
